@@ -62,7 +62,7 @@ if __name__ == '__main__':
     append_to_list("--input_width", param_list, params)
     append_to_list("--data_dir", param_list, params)
 
-    if args.mode == 'dbm':
+    if args.model == 'dbm':
         append_to_list("--hidden2_width", param_list, params)
 
     tuplist = list(product(*param_list))
