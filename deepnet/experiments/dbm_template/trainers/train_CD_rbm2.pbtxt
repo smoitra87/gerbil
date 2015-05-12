@@ -1,0 +1,16 @@
+optimizer: CD
+stopcondition {
+  all_processed: false
+  steps: 10000
+}
+train: true
+batchsize: 200
+data_proto: "rbm1_BEST/data.pbtxt"
+eval_after: 500
+checkpoint_after: 1000
+checkpoint_directory: "/storage/data1/dbm/deepnet/deepnet/experiments/template/dbm_models"
+randomize: true
+skip_last_piece: true
+get_last_piece: false
+verbose: true
+data_proto_prefix: "/storage/data1/dbm/deepnet/deepnet/experiments/template/dbm_reps"

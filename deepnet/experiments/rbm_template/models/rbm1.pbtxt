@@ -1,0 +1,74 @@
+name: "rbm1"
+model_type: DBM
+layer {
+  name: "input_layer"
+  dimensions: 69
+  numlabels: 21
+  is_input: true
+  loss_function: CROSS_ENTROPY
+  hyperparams {
+    apply_l2_decay: false
+    activation: SOFTMAX
+    sparsity: false
+    dropout: false
+  }
+  data_field {
+    train: "train_data"
+    validation: "validation_data"
+    test: "test_data"
+  }
+  performance_stats {
+    compute_error: false
+    compute_cross_entropy: true
+    compute_correct_preds: true
+  }
+  param {
+    name: "bias"
+    initialization: CONSTANT
+  }
+
+}
+layer {
+  name: "bernoulli_hidden1"
+  dimensions: 1449
+  hyperparams {
+    apply_l2_decay: false
+    activation: LOGISTIC
+  }
+  performance_stats {
+    compute_sparsity: true
+  }
+  param {
+    name: "bias"
+    initialization: CONSTANT
+  }
+}
+edge {
+  node1: "input_layer"
+  node2: "bernoulli_hidden1"
+  directed: false
+  param {
+    name: "weight"
+    initialization: DENSE_GAUSSIAN_SQRT_FAN_IN
+  }
+}
+hyperparams {
+  base_epsilon: 0.01
+  epsilon_decay: INVERSE_T
+  epsilon_decay_half_life: 5000
+  initial_momentum: 0.5
+  final_momentum: 0.9
+  momentum_change_steps: 5000
+  sparsity: false
+  sparsity_target: 0.2
+  sparsity_cost: 0.01
+  sparsity_damping: 0.9
+  dropout: false
+  dropout_prob: 0.5
+  apply_l2_decay: true
+  l2_decay: 0.001
+  activation: LOGISTIC
+  gibbs_steps: 1 
+  mf_steps: 1
+  select_model_using_cross_entropy: true
+}

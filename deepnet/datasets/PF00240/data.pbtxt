@@ -1,0 +1,28 @@
+name: "PF00240"
+data {
+  name: "train_data"
+  file_pattern: "/storage/data1/dbm/deepnet/deepnet/datasets/PF00240/PF00240_train.npy"
+  size: 3214
+  dimensions: 69
+  num_labels: 21
+  sparse: true
+}
+data {
+  name: "validation_data"
+  file_pattern: "/storage/data1/dbm/deepnet/deepnet/datasets/PF00240/PF00240_valid.npy"
+  size: 1071
+  dimensions: 69
+  num_labels: 21
+  sparse: true
+}
+data {
+  name: "test_data"
+  file_pattern: "/storage/data1/dbm/deepnet/deepnet/datasets/PF00240/PF00240_test.npy"
+  size: 1073
+  dimensions: 69
+  num_labels: 21
+  sparse: true
+}
+gpu_memory: "3G"
+main_memory: "30G"
+prefix: "/storage/data1/dbm/deepnet/deepnet/datasets/PF00240"

@@ -1,0 +1,16 @@
+optimizer: CD
+stopcondition {
+  all_processed: false
+  steps: 10000
+}
+train: true
+batchsize: 500
+data_proto: "data.pbtxt"
+eval_after: 500
+checkpoint_after: 1000
+checkpoint_directory: "/storage/data1/dbm/deepnet/deepnet/exp_ismb_rush/exp701/dbm_models"
+skip_last_piece: true
+get_last_piece: false
+randomize: true
+verbose: true
+data_proto_prefix: "/storage/data1/dbm/deepnet/deepnet/datasets/PF00240"

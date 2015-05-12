@@ -1,0 +1,5 @@
+archives/
+*.swp
+impute_run*.sh
+*run_in_parallel*.sh
+*run_in_serial*.sh

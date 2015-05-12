@@ -1,0 +1,67 @@
+name: "rbm2"
+model_type: DBM
+layer {
+  name: "hidden1"
+  dimensions: 500
+  param {
+    name: "bias"
+    initialization: CONSTANT
+  }
+  is_input: true
+  loss_function: SQUARED_LOSS
+  hyperparams {
+    apply_l2_decay: false
+  }
+  data_field {
+    train: "hidden1_train"
+    validation: "hidden1_validation"
+    test: "hidden1_test"
+  }
+  performance_stats {
+    compute_error: true
+    compute_sparsity: true
+  }
+}
+layer {
+  name: "hidden2"
+  dimensions: 500
+  param {
+    name: "bias"
+    initialization: CONSTANT
+  }
+  hyperparams {
+    apply_l2_decay: false
+  }
+  performance_stats {
+    compute_sparsity: true
+  }
+}
+edge {
+  node1: "hidden1"
+  node2: "hidden2"
+  directed: false
+  param {
+    name: "weight"
+    initialization: DENSE_GAUSSIAN_SQRT_FAN_IN
+    sigma: 1.0
+  }
+}
+hyperparams {
+  base_epsilon: 0.01
+  epsilon_decay: INVERSE_T
+  epsilon_decay_half_life: 20000
+  initial_momentum: 0.5
+  final_momentum: 0.9
+  momentum_change_steps: 3000
+  sparsity: false
+  sparsity_target: 0.2
+  sparsity_cost: 0.01
+  sparsity_damping: 0.9
+  dropout: false
+  dropout_prob: 0.5
+  apply_l2_decay: true
+  l2_decay: 0.001
+  activation: LOGISTIC
+  gibbs_steps: 1
+  select_model_using_error: true
+}
