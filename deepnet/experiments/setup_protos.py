@@ -7,7 +7,6 @@ from google.protobuf import text_format
 import pdb
 import glob
 from deepnet import deepnet_pb2
-from deepnet import awsutil
 
 
 def EditPaths(data_pb, args):
@@ -220,7 +219,10 @@ def main():
           not args.input_width : 
       raise ValueError("Required input not provided")
 
-  deepnet_path = awsutil.get_deepnet_path()
+  if 'GERBILPATH' not in os.environ:
+      raise EnvironmentError('Please set GERBILPATH')
+  deepnet_path = os.path.join(os.environ['GERBILPATH'], 'deepnet')
+
   args.data_dir = os.path.join(deepnet_path, args.data_dir)
   args.model_dir = os.path.join(deepnet_path, args.model_dir)
   args.rep_dir = os.path.join(deepnet_path, args.rep_dir)
