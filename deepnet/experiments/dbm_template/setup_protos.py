@@ -18,7 +18,7 @@ def EditTrainers(args):
   t_op_files = glob.glob("trainers/*.pbtxt")
   for t_op_file in t_op_files:
     t_op = util.ReadOperation(t_op_file)
-    if 'rbm1' in t_op_file or 'joint' in t_op_file:
+    if 'rbm' in t_op_file or 'joint' in t_op_file:
       t_op.data_proto_prefix = args.data_dir
     else:
       t_op.data_proto_prefix = args.rep_dir
@@ -52,8 +52,8 @@ def EditModels(args):
      if args.model == 'droprbm':
          model.hyperparams.dropout = True
 
-  # Specific changes to rbm1
-  model_file = os.path.join('models', 'rbm1.pbtxt')
+  # Specific changes to rbm
+  model_file = os.path.join('models', 'rbm.pbtxt')
   model = util.ReadModel(model_file)
   for layer in model.layer:
 

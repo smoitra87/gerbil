@@ -1,4 +1,4 @@
-name: "rbm1"
+name: "rbm"
 model_type: DBM
 layer {
   name: "input_layer"

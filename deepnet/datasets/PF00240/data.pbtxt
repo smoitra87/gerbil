@@ -25,4 +25,4 @@ data {
 }
 gpu_memory: "3G"
 main_memory: "30G"
-prefix: "/home/subhodeep/gerbil/deepnet/datasets/PF00240"
+prefix: "/home/subhodeep/projects/gerbil/deepnet/datasets/PF00240"

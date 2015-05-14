@@ -15,12 +15,12 @@ These are the instructions for learning a Restricted Boltzmann Machine (RBM)
 * Export the following variables::
     
     export GERBILPATH=/path/to/gerbil
-    export PYTHONPATH=${GERBILPATH}/deepnet:${PYTHONPATH}
+    export PYTHONPATH=${GERBILPATH}:${PYTHONPATH}
 
 * First create the datasets. In this example we will consider the PF00240 family ::
 
     cd deepnet/datasets
-    wget http://gremlin.bakerlab.org/fasta_2013/PF00240.fas -P tmp/
+    wget http://gremlin.bakerlab.org/fasta_2013/PF00240.fas -P /tmp/
     python create_dataset.py --fastafile /tmp/PF00240.fas --familyname PF00240
 
 * Then, create a new experiment for learning the parameters of the RBM  ::
@@ -38,6 +38,7 @@ These are the instructions for learning a Restricted Boltzmann Machine (RBM)
     python generate_experiments.py -h
 
 * Calculate imputation error on test set and report test metrics ::
+
     cd deepnet/
     python impute_parallel_run.py --start_expid 1 --end_expid 1
     ./run_in_parallel.sh 
