@@ -14,6 +14,15 @@ See `INSTALL.txt`_ for installation instructions
 
 .. _INSTALL.txt: https://github.com/smoitra87/gerbil/blob/master/INSTALL.txt
 
+Running on AWS
+--------------
+We provide a precreated AMI with all libraries and paths set. 
+
+* Create a ``g2.2xlarge`` instance and use the Gerbil specific AMI ``todo``.
+
+* Pull the latest gerbil version ::
+
+    cd gerbil/ && git pull origin master
 
 Getting Started
 ---------------
@@ -81,23 +90,13 @@ another experiment ``exp2`` to train a DBM.
 * Calculate imputation error. Job file written out to ``./run_in_parallel.sh``  ::
 
     cd deepnet/
-    python impute_parallel_run.py --start_expid 2 --end_expid 2 --model_prefix rbm
+    python impute_parallel_run.py --start_expid 2 --end_expid 2 --model_prefix dbm
     ./run_in_parallel.sh 
 
 * Create a csv table with results ::
 
     python create_results_csv.py --expid 2
     less results/imperr_exp2.csv
-
-Running on AWS
---------------
-We provide a precreated AMI with all libraries and paths set. 
-
-* Create a ``g2.2xlarge`` instance and use the Gerbil specific AMI ``todo``.
-
-* Pull the latest gerbil version ::
-
-    cd gerbil/ && git pull origin master
 
 Documentation
 -------------

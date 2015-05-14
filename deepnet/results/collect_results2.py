@@ -13,7 +13,7 @@ output_directories = ['dbm_BEST']
 output_file_suffixes = ['BEST', 'LAST']
 
 # Drop any files that contain this stri ng
-drop_string_list = ['rbm2', 'rbm1_imperr_BEST']
+drop_string_list = ['rbm2', 'rbm_imperr_BEST']
 
 
 def walk_dir(dirpath):
