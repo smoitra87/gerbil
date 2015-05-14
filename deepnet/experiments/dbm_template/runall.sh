@@ -27,11 +27,11 @@ mkdir -p ${model_output_dir}
 mkdir -p ${data_output_dir}
 
 ## Layer 1
-if ${clobber} || [ ! -e ${data_output_dir}/rbm_BEST/data.pbtxt ]; then
+if ${clobber} || [ ! -e ${data_output_dir}/rbm1_BEST/data.pbtxt ]; then
   echo "Extracting first layer Representation."
   python ${extract_rep} ${model_output_dir}/rbm_imperr_BEST \
     trainers/train_CD_rbm.pbtxt bernoulli_hidden1 \
-    ${data_output_dir}/rbm_BEST ${gpu_mem} ${main_mem} || exit 1
+    ${data_output_dir}/rbm1_BEST ${gpu_mem} ${main_mem} || exit 1
 fi
 
 ## LAYER 2
