@@ -20,7 +20,7 @@ def EditTrainers(args):
     t_op = util.ReadOperation(t_op_file)
     if 'rbm' in t_op_file or 'joint' in t_op_file:
       t_op.data_proto_prefix = args.data_dir
-    else:
+    if 'rbm2' in t_op_file :
       t_op.data_proto_prefix = args.rep_dir
     t_op.checkpoint_directory = args.model_dir
     t_op.batchsize = args.batchsize
