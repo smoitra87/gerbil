@@ -5,7 +5,8 @@ if __name__ == '__main__':
     parser = ArgumentParser(description="Create parallel run script")
     parser.add_argument("--start_expid", type=int,  help="Starting experiment id")
     parser.add_argument("--end_expid", type=int,  help="ending experiment id")
-    parser.add_argument("--nparallel", type=int,  help="Number of parallel runs")
+    parser.add_argument("--nparallel", type=int, default=1, \
+         help="Number of parallel runs")
     parser.add_argument("--run_script_name", type=str,  help="Name of run script",\
             default="run_in_parallel.sh")
     parser.add_argument("--best_model_file", type=str,  help="Best Model file")

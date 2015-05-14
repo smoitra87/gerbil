@@ -2,18 +2,11 @@
 =====================================================================
 
 
-Generative Models of Protein Sequence Families:
------------------------------------------------
+Currently the following generative models are supported:
 * Restricted Boltzmann Machines
 * Deep Boltzmann Machines
 
 **NOTE** : Currently under development. Usage should be considered experimental.
-
-Documentation
--------------
-Models described in `thesis.pdf`_.
-
-.. _thesis.pdf: https://www.cs.cmu.edu/thesis/thesis.pdf
 
 Restricted Boltzmann Machine
 ----------------------------
@@ -33,20 +26,37 @@ These are the instructions for learning a Restricted Boltzmann Machine (RBM)
 * Then, create a new experiment for learning the parameters of the RBM  ::
     
     cd deepnet/experiments
-    python generate_experiments.py --
+    python generate_experiments.py --start_job_id 1 \
+        --model rbm --data_dir PF00240
+
+* Learn the params of the modeld ::
+    
+    cd exp1 && ./runall.sh    
 
 * To see full range of options available ::
     
     python generate_experiments.py -h
 
-* Learn the params of the model
+* Calculate imputation error on test set and report test metrics ::
+    cd deepnet/
+    python impute_parallel_run.py --start_expid 1 --end_expid 1
+    ./run_in_parallel.sh 
 
-* Calculate imputation error on test set
+* Create a csv table with results ::
 
-* 
-
+    python create_results_csv.py --expid 1
+    less results/imperr_exp1.csv
 
 Deep Boltzmann Machine
 ----------------------
 Coming Soon..
 
+Running on AWS
+--------------
+
+
+Documentation
+-------------
+Models described in `thesis.pdf`_.
+
+.. _thesis.pdf: https://www.cs.cmu.edu/thesis/thesis.pdf

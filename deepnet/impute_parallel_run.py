@@ -5,12 +5,13 @@ if __name__ == '__main__':
     parser = ArgumentParser(description="Create parallel run script")
     parser.add_argument("--start_expid", type=int,  help="Starting experiment id")
     parser.add_argument("--end_expid", type=int,  help="ending experiment id")
-    parser.add_argument("--nparallel", type=int,  help="Number of parallel runs")
-    parser.add_argument("--infer_method", type=str, default="gaussian_exact", \
+    parser.add_argument("--nparallel", type=int, default=1,\
+         help="Number of parallel runs")
+    parser.add_argument("--infer_method", type=str, default="mf", \
             help = "Inference method for imputation error")
     parser.add_argument("--model_prefix", type=str, help='model prefix')
     parser.add_argument("--skip", type=int, default=1,  help="Skip these many files")
-    parser.add_argument("--mf_steps", type=int, default=1)
+    parser.add_argument("--mf_steps", type=int, default=2)
     parser.add_argument("--run_script_name", type=str,  help="Name of run script",\
             default="run_in_parallel.sh")
     parser.add_argument("--valid_only", action='store_true', help="only run the validation set")
