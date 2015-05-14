@@ -49,7 +49,7 @@ if __name__ == '__main__':
                 model_file = os.path.basename(model)
                 cmd = 'python impute.py  ' +\
                  '--model_file {}'.format(model) +\
-                 ' --train_file  experiments/{}/trainers/train_CD_rbm1.pbtxt '.format(expid) +\
+                 ' --train_file  experiments/{}/trainers/train_CD_rbm.pbtxt '.format(expid) +\
                  " --mf-steps {}".format(args.mf_steps) +\
                  ' --outf experiments/likelihoods/{0}/{0}_{1}_pll.pkl --infer-method {2}'.format(\
                  expid, model_file, args.infer_method) +\
