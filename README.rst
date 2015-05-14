@@ -37,7 +37,7 @@ These are the instructions for learning a Restricted Boltzmann Machine (RBM)
     
     python generate_experiments.py -h
 
-* Calculate imputation error on test set and report test metrics ::
+* Calculate imputation error. Job file written out to ``./run_in_paralle.sh``  ::
 
     cd deepnet/
     python impute_parallel_run.py --start_expid 1 --end_expid 1 --model_prefix rbm

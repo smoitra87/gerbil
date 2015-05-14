@@ -1,3 +1,4 @@
 exp*/
 *.csv
 likelihoods/*
+!likelihoods/.gitignore
