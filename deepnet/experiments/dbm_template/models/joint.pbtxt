@@ -25,7 +25,7 @@ layer {
   param {
     name: "bias"
     initialization: PRETRAINED
-    pretrained_model: "rbm1_imperr_BEST"
+    pretrained_model: "rbm_imperr_BEST"
   }
 }
 layer {
@@ -41,7 +41,7 @@ layer {
   param {
     name: "bias"
     initialization: PRETRAINED
-    pretrained_model: "rbm1_imperr_BEST"
+    pretrained_model: "rbm_imperr_BEST"
   }
 }
 layer {
@@ -66,7 +66,7 @@ edge {
   param {
     name: "weight"
     initialization: PRETRAINED
-    pretrained_model: "rbm1_imperr_BEST"
+    pretrained_model: "rbm_imperr_BEST"
     update_this: true
   }
 }
