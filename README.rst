@@ -23,7 +23,7 @@ See `INSTALL.txt`_ for installation instructions
 
 .. _INSTALL.txt: https://github.com/smoitra87/gerbil/blob/master/INSTALL.txt
 .. _deepnet: https://github.com/nitishsrivastava/deepnet
-.. _thesis.pdf: https://www.cs.cmu.edu/thesis/thesis.pdf
+.. _thesis.pdf: https://www.cs.cmu.edu/~subhodee/thesis/thesis.pdf
 
 Alternatively, you can run on AWS using the Gerbil AMI (see below)
 
