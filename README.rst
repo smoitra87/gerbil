@@ -104,7 +104,7 @@ another experiment ``exp2`` to train a DBM.
 
     $ cd deepnet/
     $ python impute_parallel_run.py --start_expid 2 --end_expid 2 --model_prefix dbm
-    ./run_in_parallel.sh 
+    $ ./run_in_parallel.sh 
 
 * Create a csv table with results ::
 
@@ -126,6 +126,7 @@ Extracting params from protocol buffers to .MAT files
     
     $ cd deepnet/
     $ python write_model_to_mat.py \
-        experiments/exp1/dbm_models/rbm1_1430616201 /path/to/my/folder/rbm1_1430616201.mat
+        experiments/exp1/dbm_models/rbm1_1430616201 \
+        /path/to/my/folder/rbm1_1430616201.mat
 
 
