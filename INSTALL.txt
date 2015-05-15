@@ -41,20 +41,22 @@ University of Toronto.
     home dir,
       export PYTHONPATH=$PYTHONPATH:$HOME/deepnet
 
-(4) RUN EXAMPLES
-  - Download and extract the MNIST dataset from http://www.cs.toronto.edu/~nitish/deepnet/mnist.tar.gz
-    This dataset consists of labelled images of handwritten digits as numpy files.
-  - cd to the deepnet/deepnet/examples dir
-  - run
-    $ python setup_examples.py <path to mnist dataset> <output path>
-    This will modify the example models and trainers to use the specified paths.
-  - There are examples of different deep learning models. Go to any one and
-    execute runall.sh. For example, cd to deepnet/deepnet/examples/rbm and execute
-    $ ./runall.sh
-    This should start training an RBM model.
-  
-DeepNet has been tested on Ubuntu 12.04 using CUDA 4.2 and 5.0 on a variety of NVIDIA
-GPUs (GTX-280, GTX-580, GTX-690, M2090, K-20x).
+###############################################
+Additional instructions for GERBIL
 
-If you have trouble installing/running DeepNet, please create a relevant post on GitHub.
+Subhodeep Moitra
+Carnegie Mellon University
+###############################################
+
+(1) Install Eigen
+    Download http://eigen.tuxfamily.org/index.php?title=Main_Page
+
+(2) Install eigenmat
+    cd eigenmat && make
+    export LD_LIBRARY_PATH=${LD_LIBARAY_PATH}:/path/to/gerbil/eigenmat
+
+(3) Set up Gerbil path variables
+    export GERBILPATH=/path/to/gerbil
+    export PYTHONPATH=${GERBILPATH}:${PYTHONPATH}
+
 

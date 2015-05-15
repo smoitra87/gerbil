@@ -1,6 +1,10 @@
 (GERBIL) GEnerative Restricted Boltzmann machines of protein famILies
 =====================================================================
 
+GERBIL is a tool for generative modeling of protein sequence families. 
+It is built upon the `deepnet`_ package, created by Nitish Srivastava.
+
+The models are described in `thesis.pdf`_.
 
 Currently the following generative models are supported:
 
@@ -12,6 +16,10 @@ Currently the following generative models are supported:
 See `INSTALL.txt`_ for installation instructions
 
 .. _INSTALL.txt: https://github.com/smoitra87/gerbil/blob/master/INSTALL.txt
+.. _deepnet: https://github.com/nitishsrivastava/deepnet
+.. _thesis.pdf: https://www.cs.cmu.edu/thesis/thesis.pdf
+
+Alternatively, you can run on AWS using the Gerbil AMI (see below)
 
 Running on AWS
 --------------
@@ -96,9 +104,3 @@ another experiment ``exp2`` to train a DBM.
 
     python create_results_csv.py --expid 2
     less results/imperr_exp2.csv
-
-Documentation
--------------
-Models described in `thesis.pdf`_.
-
-.. _thesis.pdf: https://www.cs.cmu.edu/thesis/thesis.pdf
