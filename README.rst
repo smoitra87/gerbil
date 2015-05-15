@@ -11,14 +11,13 @@ Currently the following generative models are supported:
 
 See `INSTALL.txt`_ for installation instructions
 
-
 .. _INSTALL.txt: https://github.com/smoitra87/gerbil/blob/master/INSTALL.txt
 
 Running on AWS
 --------------
 We provide a precreated AMI with all libraries and paths set. 
 
-* Create a ``g2.2xlarge`` instance and use the Gerbil specific AMI ``todo``.
+* Create a ``g2.2xlarge`` instance and use the Gerbil specific AMI ``ami-d18ab9e1``.
 
 * Pull the latest gerbil version ::
 
