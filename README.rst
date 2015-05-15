@@ -1,6 +1,12 @@
 (GERBIL) GEnerative Restricted Boltzmann machines of protein famILies
 =====================================================================
 
+.. image:: http://upload.wikimedia.org/wikipedia/commons/6/6b/Gerbil.JPG
+   :height: 200px
+   :width: 200 px
+   :alt: A real life gerbil
+   :align: center
+
 GERBIL is a tool for generative modeling of protein sequence families. 
 It is built upon the `deepnet`_ package, created by Nitish Srivastava.
 
